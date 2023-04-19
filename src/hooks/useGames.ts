@@ -23,7 +23,7 @@ const useGames = (gameQuery: GameQuery
     genres: gameQuery.genre?.id, platforms: gameQuery.platform?.id
    },
   }, 
-   [gameQuery]
+  [gameQuery]
 );
 
 export default useGames;
