@@ -29,7 +29,7 @@ const GenreList = ({ selectedGenre, onSelectGenre }: Props) => {
       <Heading fontSize="2xl" marginBottom={3}>
         Genres
       </Heading>
-      <List>
+      <List marginLeft={2}>
         {data.map((genre) => (
           <ListItem key={genre.id}>
             <HStack marginY={3}>
