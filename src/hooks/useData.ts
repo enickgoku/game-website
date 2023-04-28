@@ -35,3 +35,4 @@ const useData = <T>(endpoint: string, requestConfig?: AxiosRequestConfig, deps?:
 };
 
 export default useData;
+
