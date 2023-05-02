@@ -1,24 +1,11 @@
-import { useState } from "react";
-import { Box, Flex, Grid, GridItem, Show } from "@chakra-ui/react";
-import NavBar from "./components/NavBar";
-import GameGrid from "./components/GameGrid";
-import GenreList from "./components/GenreList";
-import PlatformSelector from "./components/PlatformSelector";
-import SortSelector from "./components/SortSelector";
-import GameHeading from "./components/GameHeading";
-import { Genre } from "./hooks/useGenres";
-import { Platform } from "./hooks/useGames";
+import { Box, Grid, Show, GridItem, Flex } from "@chakra-ui/react";
+import GameGrid from "../components/GameGrid";
+import GameHeading from "../components/GameHeading";
+import GenreList from "../components/GenreList";
+import PlatformSelector from "../components/PlatformSelector";
+import SortSelector from "../components/SortSelector";
 
-export interface GameQuery {
-  genre: Genre | null;
-  platform: Platform | null;
-  sortOrder: string;
-  searchText: string;
-}
-
-function App() {
-  const [gameQuery, setGameQuery] = useState<GameQuery>({} as GameQuery);
-
+const HomePage = () => {
   return (
     <Grid
       templateAreas={{
@@ -62,6 +49,6 @@ function App() {
       </GridItem>
     </Grid>
   );
-}
+};
 
-export default App;
+export default HomePage;
