@@ -3,7 +3,7 @@ import APIClient from "../services/api-client";
 import genres from "../data/genres";
 import ms from "ms";
 
-const apiClient = new APIClient<Genre>('/genres');
+const apiClient = new APIClient<Genre>("/genres");
 
 export interface Genre {
   id: number;
@@ -11,11 +11,12 @@ export interface Genre {
   image_background: string;
 }
 
-const useGenres = () => useQuery({
-  queryKey: ['genres'],
-  queryFn: apiClient.getAll,
-  staleTime: ms('24h'), // 1 day
-  initialData: genres,
-});
+const useGenres = () =>
+  useQuery({
+    queryKey: ["genres"],
+    queryFn: apiClient.getAll,
+    staleTime: ms("24h"), // 1 day
+    initialData: genres,
+  });
 
 export default useGenres;
