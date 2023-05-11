@@ -1,5 +1,4 @@
 import useTrailers from "../hooks/useTrailers";
-
 interface Props {
   gameId: number;
 }
@@ -11,8 +10,11 @@ const GameTrailer = ({ gameId }: Props) => {
   if (error) throw error;
 
   const first = data?.results[0];
+  console.log(first);
   if (!first) return null;
-  return <video src={first.data[480]} poster={first?.preview} />;
+  return (
+    <video poster={first?.preview} src={first.data[480]} controls={true} />
+  );
 };
 
 export default GameTrailer;
